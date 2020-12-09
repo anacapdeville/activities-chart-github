@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Table from './Components/Table';
+import { ButtonDiv, ButtonYear } from './Components/styles';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {year: 2016};
+  }
+
+  handleClick(yr) {
+    this.setState({year: yr})
+  };
+
+  render() {
+    const { year } = this.state;
+    return (
+      <div>
+        <Table year={ year } />
+        <ButtonDiv>
+          <ButtonYear onClick={() => this.handleClick(2016)}>2016</ButtonYear>
+          {' '}
+          <ButtonYear onClick={() => this.handleClick(2017)}>2017</ButtonYear>
+        </ButtonDiv>
+      </div>
+    )
+  }
 }
 
 export default App;
