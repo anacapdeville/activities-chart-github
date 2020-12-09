@@ -414,8 +414,8 @@ class Year2017 extends React.Component {
         </tbody>
       </table>
     </div>
-    )
-  }
+    );
+  };
 }
 
 export default Year2017;

@@ -1,8 +1,8 @@
 import React from 'react';
+import date from '../teste_arvore_data.json';
 import Year2016 from './Year2016';
 import Year2017 from './Year2017';
 import { DivTable } from './styles';
-import date from '../teste_arvore_data.json';
 import { GraySpan, GreenOneSpan, GreenTwoSpan, GreenThreeSpan, GreenFourSpan, DivLabel, Paragraph, Scale } from './styles.js';
 
 class Table extends React.Component {
@@ -16,7 +16,7 @@ class Table extends React.Component {
     const dataFiltered = date.filter((item) => this.convertDate(item.date).getFullYear() === year);
     const contributions = dataFiltered.reduce((sum, item) => {
       return sum + item.count;
-    }, 0)
+    }, 0);
     return contributions;
   };
 
@@ -38,8 +38,8 @@ class Table extends React.Component {
           <Scale>More</Scale>
         </DivLabel>
       </div>
-    )
-  }
+    );
+  };
 }
 
 export default Table;

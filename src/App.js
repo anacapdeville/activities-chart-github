@@ -6,7 +6,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {year: 2016};
-  }
+  };
 
   handleClick(yr) {
     this.setState({year: yr})
@@ -23,8 +23,8 @@ class App extends React.Component {
           <ButtonYear onClick={() => this.handleClick(2017)}>2017</ButtonYear>
         </ButtonDiv>
       </div>
-    )
-  }
+    );
+  };
 }
 
 export default App;

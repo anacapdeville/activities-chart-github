@@ -5,12 +5,12 @@ import { Gray, GreenOne, GreenTwo, GreenThree, GreenFour } from './styles.js';
 class Pixel extends React.Component {
   returnCount() {
     const { dateSelected } = this.props;
-    const findData = date.filter((item) => item.date === dateSelected)
+    const findData = date.filter((item) => item.date === dateSelected);
     if (findData[0]) {
       return findData[0].count;
     }
     return 0;
-  }
+  };
 
   renderPixel() {
     const count = this.returnCount();
@@ -39,14 +39,15 @@ class Pixel extends React.Component {
         <GreenFour />
       )
     }
-  }
+  };
+
   render() {
     return (
       <div>
         {this.renderPixel()}
       </div>
-    )
-  }
+    );
+  };
 }
 
 export default Pixel;
