@@ -1,9 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import date from '../teste_arvore_data.json';
 import Year2016 from './Year2016';
 import Year2017 from './Year2017';
-import { DivTable } from './styles';
-import { GraySpan, GreenOneSpan, GreenTwoSpan, GreenThreeSpan, GreenFourSpan, DivLabel, Paragraph, Scale } from './styles.js';
+import { DivTable, GraySpan, GreenOneSpan, GreenTwoSpan, GreenThreeSpan, GreenFourSpan, DivLabel, Paragraph, Scale } from './styles.js';
 
 class Table extends React.Component {
   convertDate(dt) {
@@ -17,7 +17,8 @@ class Table extends React.Component {
     const contributions = dataFiltered.reduce((sum, item) => {
       return sum + item.count;
     }, 0);
-    return contributions;
+    const contributionsWithComma = contributions.toLocaleString('en');
+    return contributionsWithComma;
   };
 
   render() {
@@ -26,7 +27,7 @@ class Table extends React.Component {
       <div>
         <Paragraph>{ this.sumOfContributions() } contributions in { year}</Paragraph>
         <DivTable>
-          {year === 2016 ? <Year2016 /> : <Year2017 />}
+          { year === 2016 ? <Year2016 /> : <Year2017 /> }
         </DivTable>
         <DivLabel>
           <Scale>Less</Scale>
@@ -41,5 +42,9 @@ class Table extends React.Component {
     );
   };
 }
+
+Table.propTypes = {
+  year: PropTypes.number.isRequired,
+};
 
 export default Table;

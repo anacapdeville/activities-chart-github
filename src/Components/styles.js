@@ -3,8 +3,8 @@ import stylist from 'styled-components';
 export const Gray = stylist.span`
   background-color: #EBEDF0;
   display: inline-block;
-  height: 10px;
-  width: 10px;
+  height: 13px;
+  width: 13px;
   margin: -0.2px;
   border: 1px;
 `;

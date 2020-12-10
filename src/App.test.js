@@ -5,18 +5,18 @@ test('there are two buttons on the page', () => {
   const { getAllByRole } = render(<App />);
   const button = screen.getAllByRole('button');
   expect(button.length).toBe(2);
-})
+});
 
 test('show the number of contributions in 2016', () => {
   const { getByText } = render(<App />);
-  expect(screen.getByText('1422 contributions in 2016')).toBeInTheDocument();
+  expect(screen.getByText('1,422 contributions in 2016')).toBeInTheDocument();
 });
 
 test('show the number of contributions in 2017', () => {
   const { getByText, getByRole } = render(<App />);
   const button2017 = screen.getByRole('button', {name: '2017'});
   fireEvent.click(button2017);
-  expect(screen.getByText('3190 contributions in 2017')).toBeInTheDocument();
+  expect(screen.getByText('3,190 contributions in 2017')).toBeInTheDocument();
 });
 
 test('the head of the table has the name of the months in 2016', () => {

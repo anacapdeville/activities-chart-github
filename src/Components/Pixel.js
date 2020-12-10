@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import date from '../teste_arvore_data.json';
 import { Gray, GreenOne, GreenTwo, GreenThree, GreenFour } from './styles.js';
 
@@ -17,37 +18,41 @@ class Pixel extends React.Component {
     if (count === 0) {
       return (
         <Gray />
-      )
+      );
     }
     else if (count > 0 && count <= 15) {
       return (
         <GreenOne />
-      )
+      );
     }
     else if (count >= 16 && count <= 25) {
       return (
         <GreenTwo />
-      )
+      );
     }
     else if (count >= 26 && count <= 40) {
       return (
         <GreenThree />
-      )
+      );
     }
     else if (count >= 41) {
       return (
         <GreenFour />
-      )
+      );
     }
   };
 
   render() {
     return (
       <div>
-        {this.renderPixel()}
+        { this.renderPixel() }
       </div>
     );
   };
 }
+
+Pixel.propTypes = {
+  dateSelected: PropTypes.string.isRequired,
+};
 
 export default Pixel;
