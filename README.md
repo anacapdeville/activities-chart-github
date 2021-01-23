@@ -21,7 +21,7 @@ git clone git@github.com:anacapdeville/teste.git
 
 3. Access the directory of the project and then install the dependencies
 ```
-cd teste
+cd activities-chart-github
 npm install
 ```
 
